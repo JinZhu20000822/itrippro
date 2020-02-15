@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"	
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+                http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+                http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+                http://www.springframework.org/schema/context
+                http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+
+	<!-- 支付宝手机网站支付 -->
+	<bean class="cn.itrip.trade.config.AlipayConfig">
+		<property name="appID" value="2016102100729880"/>
+		<property name="rsaPrivateKey" value="MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCVTjZXJeI6SLR+DJEQD/+e6hK4axDy3R+am3YJ1jcmoxINBd5DrWDYe5Qr/O+Q9OQNEXlB3hr9gX00h1YOB3aoxwzZbhEf0GTqqrKuvHigFuKeeF/jatQvQVgzdBWpd6/ICpEzaWJimWhytxPEun87OB56qu4v9XV6G6Kr7aNpvbVeTWIXcmgyrjG5Y33BTWaVkDQuGce4Ze/OKQzuaaM00XdImnReEb88zzPkXutoej/9qLpCTZT6GUbMX4zoqFq3Cow1V7AdpVDZoox273WCYSqt/oykhhqkX+CfozSq87NztHwYVcR1GJ7iC7w8ZWZbHBp8/Ixd6WsjyROCEbGTAgMBAAECggEAF8qFuC9ONDFfqXJBL0kNV3o/D2noInr/zTgWgAzFbv+vIaoct7YJ55URkEzWs8eCC18MbmWA8YJPvC4QlV21F8HYF1GFowcm/YnDvTpFEmVzKQNPbEKamwkTj+dgiEeNGBgu+P1C8yk0zorDuKZrHbmciblxCO1ZEeMTccgFMRUOYf9ZjpnVVOwIuMxbbOPVP8ELxZFmhPJJmigBUF9N4jJ8KrR3gEHmKDdgE12TsxH5dbrOXIsf78bry5Pa45wnKaueiCQMjEyXbI5haHwxjFodj7LW6uNKtXXv1GVDiYT3WAA03QPP+ruivbjt3/TELDuWuFoKQMAUkd3ue/LwoQKBgQDD8fAOL/TSleY5Mp/JB5CVWC1Ck5A2ZvhOsJ6ps8F54nET8q0IsERin5GqdL95aDmOaROwgi6kxwkCPeFxHQPS7W7AMYRUWymW0uNJXDNaphTFvjTLZIVP2XvogCcFhIZzv/Y6uwo63t1GQNcXcjnm2p6ReBLf06tm/UK5kUJOwwKBgQDDEOJ/tkgF3j/Hk3X3bBIfbNajGD24FzyWfWywiYDb8XapkE3nHSKWPm579ayPCMReuvCrVqAEc1F8UFVnYqXopZQLqMQq2H5U+dVAiKQUklLFImAPTzJYSygWK0YoKz5hoV5iYSCQgs03stbc57fWdATBefkgpMIdTZzF50OE8QKBgElBCOL08M1Ntx1JHM12I4qBxaHvMunzwv8ALsD47+sWSfoQLrph058fUsDsFq1X1rSz+eVyNefqdSa+Zar5EvXnSBFYMcWrszesrcY+TwCjuH5Y5rnnYaOBhj5csrnwWqepa293f5KUwRrDoOYmERmKP9/YiQ3ev2SoaCqh8K0rAoGBALnGB+BXampkStu4fX3BJ9VT42p6eLUtNB+infPXUKinYzqD2x2DauAp3zEhPVEPqW0KnpCfNFBovy8kluGaWqWho8gi14hynIYzVTxbpeCNplRms5OA+lKKaUgLuIoi/QsgEvKgy9G1MNqd8PF7oWKVJb5ZesDzCIe91dPIt04RAoGBAKLmbogQSVTl9Whrllu74CVvvfaLXh3PkahnP+QQoby0OEbXR6m/NV++xc8k1zTFxbcgSjhf9vPLFO97LMlD7wMLdFr9MRVW9bigy97N1DJANIw86amtrBG794+1ozfQ5Grr/gbcgDKQID4Seo9t79ZYXqBB/25qPbMPPzxhnwiN"/>
+		<property name="notifyUrl" value=" http://qxukxg.natappfree.cc/tracle/api/notify"/>
+		<property name="returnUrl" value="http://qxukxg.natappfree.cc/tracle/api/return"/>
+		<property name="url" value="https://openapi.alipaydev.com/gateway.do"/>
+		<property name="charset" value="UTF-8"/>
+		<property name="format" value="json"/>
+		<property name="alipayPublicKey" value="MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjD7cPDu8qAIh+hCrugo0G2dODSyXmpApk9vOuKxJaHAaXgHYTON9jYG2Drszihbk5jaxmKiraQfZRXmLcomZ/YjGXZXZAQ4w0U/7EhmCZFCCl+dM8v7+bHp7lYpEMPlr6lrggD88YJdSDTChdcn0dZTbF0G8amjh/h6c3Vd/t9qfOA0tcciiEhDuOfdnQ5BINkD41qlcfcxPdpLhRwyB1TnsafPS3AIwtwlOHX46Afer2cV3bwUknPziujnZ+EuSt4k292v9CPP1a4t+IysyGofW4ZVptbslRf1sJFtsz5GOmZVmMabFre5aLKRxFsbfvsnzS3YlLx/jE9knH/QGQQIDAQAB"/>
+		<property name="logPath" value="/logs"/>
+		<property name="signType" value="RSA2"/>
+		<!-- <property name="paymentSuccessUrl" value="/itriptrade/success.jsp"/> -->
+		<property name="paymentSuccessUrl" value="http://localhost:3000/index.html#/orderpaystate?orderNo=%s&amp;id=%s"/>
+		<property name="paymentFailureUrl" value="http://localhost:3000/index.html#/orderpaystate?orderNo=%s&amp;id=%s&amp;state=0"/>
+	</bean>
+	
+	
+</beans>
